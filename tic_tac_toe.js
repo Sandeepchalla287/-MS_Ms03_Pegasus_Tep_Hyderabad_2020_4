@@ -8,25 +8,27 @@ function getWinner() {
         box6 = document.getElementById("box6"),
         box7 = document.getElementById("box7"),
         box8 = document.getElementById("box8"),
-        box9 = document.getElementById("box9");
+        box9 = document.getElementById("box9"),
+        win = document.getElementById("win");
+        win1 = document.getElementById("win1");
 
 // Selecting Winner from Possibities:
     if      (box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
-    { console.log("Win"); } 
+    { win.innerHTML = 'Win'; } 
     else if(box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML) 
-    { console.log("Win"); } 
+    { win.innerHTML = 'Win'; } 
     else if (box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML) 
-    { console.log("Win"); } 
-    else if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box4.innerHTML) 
-    { console.log("Win"); }
+    { win.innerHTML = 'Win'; } 
+    else if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) 
+    { win.innerHTML = 'Win'; }
     else if (box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
-    { console.log("Win"); }
+    { win.innerHTML = 'Win'; }
     else if (box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
-    { console.log("Win"); }
+    { win.innerHTML = 'Win'; }
     else if (box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
-    { console.log("Win"); }
+    { win.innerHTML = 'Win'; }
     else if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
-    { console.log("Win"); }
+    { win.innerHTML = 'Win'; }
 
 }
 
@@ -34,7 +36,7 @@ var boxes = document.querySelectorAll("#table td"),X_or_O = 0;
 // console.log(boxes);
 
 for (let i = 0; i < boxes.length; i++) {
-    boxes[i].onclick = function() {
+    boxes[i].addEventListener("click",function() {
         if(this.innerHTML !== "X" && this.innerHTML !== "O") //Not clicking on the X and O again
     {
         if (X_or_O % 2 === 0) {
@@ -49,6 +51,5 @@ for (let i = 0; i < boxes.length; i++) {
             X_or_O++;
         }
     }
+    })
 }
-}
-
